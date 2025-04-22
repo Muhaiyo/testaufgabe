@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Премиум недвижимость</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #fff;
+            background-color: #1a1a1a;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero-section {
+            display: flex;
+            min-height: 600px;
+        }
+
+        .hero-left {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-right {
+            flex: 1;
+            background-color: #1a1a1a;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .features {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            margin-right: 15px;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .feature-text {
+            line-height: 1.4;
+        }
+
+        .order-btn {
+            background-color: white;
+            color: black;
+            padding: 12px 30px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            align-self: flex-start;
+        }
+
+        .info-section {
+            display: flex;
+            min-height: 600px;
+        }
+
+        .info-left {
+            flex: 1;
+            background-color: #1a1a1a;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-right {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1599423300746-b62533397364');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        .price-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin-right: 15px;
+            position: relative;
+        }
+
+        .check-icon::after {
+            content: "\2713";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+        }
+
+        .contact-section {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+            display: flex;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            color: #1a1a1a;
+        }
+
+        .contact-image {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1611262588024-d12430b98933');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav">
+        <div class="logo">LOREM</div>
+        <div class="nav-links">
+            <a href="#">О проекте</a>
+            <a href="#">О нас</a>
+            <a href="#">Связаться</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="hero-left"></div>
+    <div class="hero-right">
+        <div class="features">
+            <div class="feature-item">
+                <div class="feature-icon"></div>
+                <div class="feature-text">
+                    Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"></div>
+                <div class="feature-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"></div>
+                <div class="feature-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur, adipiscing elit, sed do eiusmod tempor
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"></div>
+                <div class="feature-text">
+                    Lorem ipsum dolor amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </div>
+            </div>
+        </div>
+        <button class="order-btn">Заказать</button>
+    </div>
+</section>
+
+<section class="info-section">
+    <div class="info-left">
+        <h1>Lorem ipsum<br>dolor sit amet</h1>
+        <div class="subtitle">sed do eiusmod tempor</div>
+
+        <div class="price-item">
+            <div class="check-icon"></div>
+            <div>$ 10 000 <span style="opacity: 0.7">consectetur elit</span></div>
+        </div>
+        <div class="price-item">
+            <div class="check-icon"></div>
+            <div>30% <span style="opacity: 0.7">sed do eiusmod tempor</span></div>
+        </div>
+        <div class="price-item">
+            <div class="check-icon"></div>
+            <div>17% <span style="opacity: 0.7">adipiscing elit sed do</span></div>
+        </div>
+
+        <button class="order-btn">Заказать</button>
+    </div>
+    <div class="info-right"></div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-form">
+        <h2 class="form-title">Consectetur<br>sed do eiusmod</h2>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="E-mail">
+        <div class="checkbox-container">
+            <input type="checkbox" id="privacy">
+            <label for="privacy">I accept Privacy policy</label>
+        </div>
+        <button class="submit-btn">Submit form</button>
+    </div>
+    <div class="contact-image"></div>
+</section>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-logo">LOREM</div>
+        <div class="footer-links">
+            <div>CONSECTETUR</div>
+            <div>ADIPISCING</div>
+            <div>TEMPOR</div>
+        </div>
+        <button class="order-btn">Заказать</button>
+    </div>
+    <div class="footer-bottom">
+        <div>© 2024, Copyright</div>
+        <div class="social-icons">
+            <div class="social-icon">i</div>
+            <div class="social-icon">f</div>
+            <div class="social-icon">t</div>
+            <div class="social-icon">y</div>
+            <div class="social-icon">in</div>
+        </div>
+        <div>
+            <span>Privacy policy</span>
+            <span style="margin-left: 20px;">Terms of Use</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
